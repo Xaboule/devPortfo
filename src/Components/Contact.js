@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
-import contactImg from '../assets/img/contact-img.svg'
+import maillogo from "../assets/img/mailW.png"
 
 export const Contact = () => {
     
@@ -51,7 +51,7 @@ if(result.code === 200){
             <Container>
                 <Row className="align-items-center">
                     <Col md={6}>
-                    <img src={contactImg} alt="Contact me"/>
+                    <img src={maillogo} className="mail-logo" alt="Contact me"/>
                     </Col>
                     <Col md={6}>
                         <h2>Hit Me Up!</h2>

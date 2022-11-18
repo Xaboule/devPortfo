@@ -23,21 +23,25 @@
 html{
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  z-index: 100;
 }
 
 body{
+
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
   background-color:  #121212 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
+  z-index: 100;
 }
 
 h1, h2, h3, h4, h5, h6{
   margin: 0;
   padding: 0;
   line-height: normal;
+  z-index: 100;
 }
 
 nav.navbar {
@@ -189,8 +193,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 
-
+.banner .intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+/* border: red solid 2px */
+/* background-color: rgba(0,0,0,0.4); */
+background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0) 100%);
+}
 .banner {
+  z-index: 100;
   margin-top: -8rem;
   padding: 260px 0 100px 0;
   background-image: url('./assets/img/smoke.jpg');
@@ -198,6 +210,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
+
+  
+  .headxav{
+  z-index: 0 ;
+  position: absolute !important;
+  border: red solid 2px;
+  right: 0;
+  top:0;
+  margin-top: 20vh;
+  height: 100%;
+  width: 100%;
+ 
+} 
+
 .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -209,21 +237,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
 }
 .banner h1 {
-  font-size: 65px;
+  z-index: 100;
+  font-size: 4vw;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
+  margin-top: 0.5rem;
   margin-bottom: 20px;
   display: block;
 }
 
+
 .banner .h1wrap{
+  z-index: 100;
   height: 10rem;
+  }
+  .banner .pwrap {
+    z-index: 100;
+    font-size: 1vw;
 
   }
 .banner p {
   color: #B8B8B8;
-  font-size: 18px;
+  font-size: 1.5vw;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
@@ -413,6 +449,8 @@ z-index: -4;
 .proj-txtx {
   position: absolute;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -445,14 +483,48 @@ z-index: -4;
   z-index: -4;
 }
 
+.proj-txtx .languages {
+  font-size: 0.8rem;
+  /* border: red solid 1px; */
+ /* margin-top: 25px; */
+}
+
 
 .contact {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 60px 0 200px 0;
 }
-.contact img {
-  width: 92%;
+.contact .mail-logo {
+  width: 60%;
+  margin-left: -5vw;
+  filter: drop-shadow(0 0 25px  #f1ee34) 
+          drop-shadow(-10px 5px 5px  #f19334);
+  animation: flicker 0.8s infinite alternate;
+  /* filter: drop-shadow(5px 15px 5px  #f1ee34); */
 }
+
+@keyframes flicker {
+  20%{
+    opacity: 0.8;
+  }
+  30%{
+    opacity: 1;
+  }
+  60%{
+    opacity: 0.8;
+  }
+  70%{
+    opacity: 0.7;
+  }
+  90%{
+    opacity: 0.9;
+  }
+  100%{
+    opacity: 0.7;
+  }
+}
+
+
 .contact h2 {
 	font-size: 45px;
 	font-weight: 700;
@@ -533,6 +605,28 @@ z-index: -4;
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+
+
+
+
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 70vw;
+  margin: auto;
+
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 
