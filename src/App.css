@@ -21,7 +21,7 @@
 }
 
 html{
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   scroll-padding-top: 75px;
   z-index: 100;
 }
@@ -43,6 +43,26 @@ h1, h2, h3, h4, h5, h6{
   line-height: normal;
   z-index: 100;
 }
+
+.loadingScreen-hidden{
+  display: none;
+}
+
+.loadingScreen{
+  display: block;
+  z-index: 9999 !important;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.499);
+  position:absolute;
+ 
+}
+.loadingScreen button{
+  width: 3rem;
+  height: 2rem;
+  margin: auto;
+}
+
 
 nav.navbar {
   padding: 18px 0;
@@ -197,22 +217,26 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-/* border: red solid 2px */
-/* background-color: rgba(0,0,0,0.4); */
-background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0) 100%);
+  /* border: red solid 2px */
+  /* background-color: rgba(0,0,0,0.4); */
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0) 100%);
+  z-index: 200 !important;
 }
 .banner {
   z-index: 100;
   margin-top: -8rem;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/smoke.jpg');
+  /* background-image: url('./assets/img/smoke.jpg'); */
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 
 
-
+#home > div > div > div.col-xl-7.col-md-6.col-12 {
+  z-index: 10;
+}
   
   .headxav{
   z-index: 0 ;
@@ -220,9 +244,10 @@ background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0
   border: red solid 2px;
   right: 0;
   top:0;
-  margin-top: 20vh;
-  height: 100%;
+  /* margin-top: 20vh; */
+  height: 60%;
   width: 100%;
+  /* opacity: 0.2; */
  
 } 
 
@@ -235,6 +260,7 @@ background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
+  z-index: 100;
 }
 .banner h1 {
   z-index: 100;
@@ -249,6 +275,7 @@ background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0
 
 
 .banner .h1wrap{
+  
   z-index: 100;
   height: 10rem;
   }
@@ -310,7 +337,7 @@ background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0
   border-radius:  64px;
   text-align: center;
   padding: 60px 50px;
-  margin-top:  -60px;
+  /* margin-top:  -60px; */
 }
 
 .skill h2 {
@@ -630,43 +657,30 @@ z-index: -4;
 }
 
 
-
+.main{
+  text-align: center;
+}
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.App-hidden  {
+  text-align: center;
+  opacity: 0.2;
+  z-index: 0 !important;
+  overflow: hidden;
+  pointer-events: none !important;
+  /* height: 100%; */
+}
+.App-hidden canvas{
+  z-index: 0;
+  pointer-events: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-hidden .else{
+  /* display: none; */
+overflow: hidden;
 }
